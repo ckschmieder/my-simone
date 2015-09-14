@@ -542,6 +542,74 @@ a:active {
 		background: hsl(0, 0%, 30%);    
 	}
 }
+/*END Small Menu*/
+
+/* Social Menu */
+
+.menu-social ul {
+    float: right;
+    text-align: center;
+    list-style: none;    
+}
+
+.menu-social ul li {
+    position: relative;
+    display:  inline-block;    
+}
+
+.menu-social li a:before {
+    display: inline-block;
+    padding: 0 5px;
+    vertical-align: top;
+    font-family: 'Fontawesome';
+    font-size: 20px;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    content: '\f0c0';
+}
+
+/*Inserts icon depending on if the link contains what is in the []*/
+	.menu-social li a[href*="facebook.com"]::before { content: '\f09a'; }
+
+	.menu-social li a[href*="twitter.com"]::before { content: '\f099'; }
+
+	.menu-social li a[href*="dribbble.com"]::before { content: '\f17d'; }
+
+	.menu-social li a[href*="plus.google.com"]::before { content: '\f0d5'; }
+
+	.menu-social li a[href*="pinterest.com"]::before { content: '\f0d2'; }
+
+	.menu-social li a[href*="github.com"]::before { content: '\f09b'; }
+
+	.menu-social li a[href*="tumblr.com"]::before { content: '\f173'; }
+
+	.menu-social li a[href*="youtube.com"]::before { content: '\f167'; }
+
+	.menu-social li a[href*="flickr.com"]::before { content: '\f16e'; }
+
+	.menu-social li a[href*="vimeo.com"]::before { content: '\f194'; }
+
+	.menu-social li a[href*="instagram.com"]::before { content: '\f16d'; }
+
+	.menu-social li a[href*="linkedin.com"]::before { content: '\f0e1'; }
+
+/*Prevents the social menu from collapsing with the rest of the menu on mobile screens*/
+	@media screen and (max-width: 600px) {
+	    #menu-social ul {
+		    position: absolute;
+	        top: 0;
+	        right: 6rem;
+	        display: block;
+	    }
+	    
+	    #menu-social li a { 
+	        padding-left:.5em;
+	        padding-right: .5em;
+	    }
+	}
+
+/* END Social Menu */
+
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
@@ -569,6 +637,7 @@ a:active {
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
+	right: 0;
 }
 
 .screen-reader-text:hover,
@@ -696,6 +765,67 @@ X.X Header
     color: hsl(0, 0%, 100%);
 }
 
+/* Header search */
+
+.search-toggle {
+    float: right;
+    width: 54px;
+    height: 54px;
+    padding: 12px;
+    margin-right: 20px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+.search-toggle:hover,
+.search-toggle.active {
+    background: #4d4d4d;
+    background: hsl(0, 0%, 30%);
+}
+
+@media screen and (max-width: 600px) {
+    .search-toggle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 0;
+    }
+}
+
+input[type="search"] {
+    box-sizing: border-box;  /*adding padding won't increase the size of the search form*/
+    width: 100%;
+}
+
+.search-box-wrapper {
+    z-index: 2;		/*positions the form on top of other content so it won't be covered*/
+    width: 100%;
+    display: none;
+}
+
+.search-box {
+    padding: 1em;
+    background: #4d4d4d;
+    background: hsl(0, 0%, 30%);
+}
+
+.search-box .search-field {
+    max-width: 362px;
+    float: right;
+    padding: 1rem 2rem 1rem 4rem;
+    font-size: 20px;
+    font-size: 2rem;
+    background-color: #fff;
+    border: 0;
+}
+
+.error404 .search-submit,
+.search .search-submit,
+.search-box .search-submit { 
+    display: none; 
+}
+
 /* Header responsive */
 @media screen and (max-width: 600px) {
     .site-branding { padding: 0; }
@@ -707,6 +837,7 @@ X.X Header
         border: none;
     }
 }
+
 /*--------------------------------------------------------------
 9.0 Widgets
 --------------------------------------------------------------*/

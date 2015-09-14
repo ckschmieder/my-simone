@@ -43,12 +43,25 @@
 					</div>
 				</div>
 
-				<nav id="site-navigation" class="main-navigation" role="navigation">
+			<nav id="site-navigation" class="main-navigation" role="navigation">
 					<h1 class="menu-toggle"><?php _e( 'Menu', 'my-simone' ); ?></h1>
 					<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'my-simone' ); ?></a>
 
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-				</nav><!-- #site-navigation -->
+
+					<div class="search-toggle">
+					    <i class="fa fa-search"></i>
+					    <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'my-simone' ); ?></a>
+					</div>
+					
+					<?php my_simone_social_menu(); ?>
+			</nav><!-- #site-navigation -->
+
+			<div id="search-container" class="search-box-wrapper clear">
+				    <div class="search-box clear">
+				        <?php get_search_form(); ?>
+				    </div>
+			</div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
