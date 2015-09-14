@@ -79,7 +79,8 @@ function my_simone_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
-}
+
+
 add_action( 'widgets_init', 'my_simone_widgets_init' );
 
 /**
